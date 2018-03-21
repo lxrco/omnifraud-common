@@ -81,10 +81,10 @@ class Payment
     /**
      * @param int $expiryYear
      */
-    public function setExpiryYear($expiryYear)
+    public function setExpiryYear(int $expiryYear)
     {
-        if (strlen($expiryYear) === 4) {
-            $expiryYear = (int)substr($expiryYear, 2);
+        if ($expiryYear > 99) {
+            $expiryYear = (int)substr((string)$expiryYear, 2);
         }
         $this->expiryYear = $expiryYear;
     }
