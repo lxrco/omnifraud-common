@@ -1,0 +1,32 @@
+{
+    "name": "omnifraud/common",
+    "description": "A framework agnostic, multi-gateway fraud prevention library for PHP 7.1+",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LXRandCo",
+            "email": "hugo.v@lxrco.com"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Omnifraud\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpunit --colors=always"
+        ]
+    }
+}
