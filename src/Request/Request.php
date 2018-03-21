@@ -10,30 +10,27 @@ use Omnifraud\Request\Data\Session;
 
 class Request
 {
-    /** @var Purchase */
+    /** @var \Omnifraud\Request\Data\Purchase */
     protected $purchase;
 
-    /** @var Payment */
+    /** @var \Omnifraud\Request\Data\Payment */
     protected $payment;
 
-    /** @var Account */
+    /** @var \Omnifraud\Request\Data\Account */
     protected $account;
 
-    /** @var Session */
+    /** @var \Omnifraud\Request\Data\Session */
     protected $session;
 
-    /** @var Address */
+    /** @var \Omnifraud\Request\Data\Address */
     protected $shippingAddress;
 
-    /** @var Address */
+    /** @var \Omnifraud\Request\Data\Address */
     protected $billingAddress;
 
     /** @var string */
     protected $uid;
 
-    /**
-     * Request constructor.
-     */
     public function __construct()
     {
         $this->purchase = new Purchase();
@@ -44,114 +41,72 @@ class Request
         $this->billingAddress = new Address();
     }
 
-    /**
-     * @return Purchase
-     */
-    public function getPurchase()
+    public function getPurchase(): Purchase
     {
         return $this->purchase;
     }
 
-    /**
-     * @param Purchase $purchase
-     */
-    public function setPurchase(Purchase $purchase)
+    public function setPurchase(Purchase $purchase): void
     {
         $this->purchase = $purchase;
     }
 
-    /**
-     * @return Payment
-     */
-    public function getPayment()
+    public function getPayment(): Payment
     {
         return $this->payment;
     }
 
-    /**
-     * @param Payment $payment
-     */
-    public function setPayment(Payment $payment)
+    public function setPayment(Payment $payment): void
     {
         $this->payment = $payment;
     }
 
-    /**
-     * @return Account
-     */
-    public function getAccount()
+    public function getAccount(): Account
     {
         return $this->account;
     }
 
-    /**
-     * @param Account $account
-     */
-    public function setAccount(Account $account)
+    public function setAccount(Account $account): void
     {
         $this->account = $account;
     }
 
-    /**
-     * @return Session
-     */
-    public function getSession()
+    public function getSession(): Session
     {
         return $this->session;
     }
 
-    /**
-     * @param Session $session
-     */
-    public function setSession(Session $session)
+    public function setSession(Session $session): void
     {
         $this->session = $session;
     }
 
-    /**
-     * @return Address
-     */
-    public function getShippingAddress()
+    public function getShippingAddress(): Address
     {
         return $this->shippingAddress;
     }
 
-    /**
-     * @param Address $shippingAddress
-     */
-    public function setShippingAddress(Address $shippingAddress)
+    public function setShippingAddress(Address $shippingAddress): void
     {
         $this->shippingAddress = $shippingAddress;
     }
 
-    /**
-     * @return Address
-     */
-    public function getBillingAddress()
+    public function getBillingAddress(): Address
     {
         return $this->billingAddress;
     }
 
-    /**
-     * @param Address $billingAddress
-     */
-    public function setBillingAddress(Address $billingAddress)
+    public function setBillingAddress(Address $billingAddress): void
     {
         $this->billingAddress = $billingAddress;
     }
 
-    /**
-     * @return string
-     */
-    public function getUid()
+    public function getUid(): string
     {
         return $this->uid;
     }
 
-    /**
-     * @param string $uid
-     */
-    public function setUid($uid)
+    public function setUid(string $uid): void
     {
         $this->uid = $uid;
     }

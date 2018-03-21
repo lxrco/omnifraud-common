@@ -8,35 +8,35 @@ interface ResponseInterface
      * Get all messages
      * @return MessageInterface[]
      */
-    public function getMessages();
+    public function getMessages(): array;
 
     /**
      * How trustworthy is that transaction, 100 mean guaranteed
-     * @return float
+     * @return float|null
      */
-    public function getPercentScore();
+    public function getPercentScore(): ?float;
 
     /**
      * Is this transaction guaranteed
      * @return int
      */
-    public function isGuaranteed();
+    public function isGuaranteed(): bool;
 
     /**
      * Does this response needs to be updated at a later time?
      * @return bool
      */
-    public function isAsync();
+    public function isAsync(): bool;
 
     /**
      * Get raw response from the service
      * @return string
      */
-    public function getRawResponse();
+    public function getRawResponse(): string;
 
     /**
      * Get UID of the request, used for future requests to the service
      * @return string
      */
-    public function getRequestUid();
+    public function getRequestUid(): string;
 }

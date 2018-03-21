@@ -16,90 +16,67 @@ class Purchase
     /** @var int Total in cents */
     protected $total;
 
-    /** @var Product[] */
+    /** @var \Omnifraud\Request\Data\Product[] */
     protected $products = [];
 
-    /**
-     * @return string
-     */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     */
-    public function setId($id)
+    public function setId(string $id)
     {
         $this->id = $id;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getCreatedAt()
+
+    public function getCreatedAt(): \DateTime
     {
         return $this->createdAt;
     }
 
-    /**
-     * @param \DateTime $createdAt
-     */
-    public function setCreatedAt(\DateTime $createdAt)
+    public function setCreatedAt(\DateTime $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrencyCode()
+    public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
 
-    /**
-     * @param string $currencyCode
-     */
-    public function setCurrencyCode($currencyCode)
+    public function setCurrencyCode(string $currencyCode)
     {
         $this->currencyCode = $currencyCode;
     }
 
     /**
-     * @return Product[]
+     * @return \Omnifraud\Request\Data\Product[]
      */
-    public function getProducts()
+    public function getProducts(): array
     {
         return $this->products;
     }
 
     /**
-     * @param Product[] $products
+     * @param \Omnifraud\Request\Data\Product[] $products
      */
-    public function setProducts(array $products)
+    public function setProducts(array $products): void
     {
         $this->products = $products;
     }
 
-    public function addProduct(Product $product)
+    public function addProduct(Product $product): void
     {
         $this->products[] = $product;
     }
 
-    /**
-     * @return int
-     */
-    public function getTotal()
+    public function getTotal(): int
     {
         return $this->total;
     }
 
-    /**
-     * @param int $total
-     */
-    public function setTotal($total)
+    public function setTotal(int $total): void
     {
         $this->total = $total;
     }

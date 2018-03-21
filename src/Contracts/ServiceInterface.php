@@ -17,25 +17,25 @@ interface ServiceInterface
      *
      * @return string|null
      */
-    public function trackingCode($pageType);
+    public function trackingCode(string $pageType): ?string;
 
     /**
      * Run request validation
      * @param Request $request
      *
-     * @return ResponseInterface
-     * @throws RequestException
+     * @return \Omnifraud\Contracts\ResponseInterface
+     * @throws \Omnifraud\Request\RequestException
      */
-    public function validateRequest(Request $request);
+    public function validateRequest(Request $request): ResponseInterface;
 
     /**
      * Update a response that was marked as async
      * @param Request $request Most services only require the UID
      *
-     * @return ResponseInterface
+     * @return \Omnifraud\Contracts\ResponseInterface
      * @throws \Omnifraud\Request\RequestException
      */
-    public function updateRequest(Request $request);
+    public function updateRequest(Request $request): ResponseInterface;
 
     /**
      * If the service provides a web interface, this should return the URL at which
@@ -44,24 +44,29 @@ interface ServiceInterface
      *
      * @return string|null
      */
-    public function getRequestExternalLink($requestUid);
+    public function getRequestExternalLink($requestUid): ?string;
 
     // Those methods can be left empty if the service does not support them
 
     /**
      * Log a transaction that was refused by payment processor
+     *
+     * Can be left empty if not supported
+     *
      * @param Request $request
      *
      * @return void
-     * @throws RequestException
+     * @throws \Omnifraud\Request\RequestException
      */
-    public function logRefusedRequest(Request $request);
+    public function logRefusedRequest(Request $request): void;
 
     /**
      * Cancel a request for which the transaction was refused/refunded anyway
      *
+     * Can be left empty if not supported
+     *
      * @param string $requestUid
-     * @throws RequestException
+     * @throws \Omnifraud\Request\RequestException
      */
-    public function cancelRequest($requestUid);
+    public function cancelRequest(string $requestUid): void;
 }

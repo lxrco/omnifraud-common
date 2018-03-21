@@ -4,7 +4,7 @@ namespace Omnifraud\Request\Data;
 
 class Product
 {
-    /** @var string  */
+    /** @var string */
     protected $sku;
 
     /** @var string */
@@ -16,10 +16,10 @@ class Product
     /** @var string */
     protected $image;
 
-    /** @var string */
+    /** @var int */
     protected $quantity;
 
-    /** @var string int Price in cents */
+    /** @var int Price in cents */
     protected $price;
 
     /** @var int Weight in grams */
@@ -34,162 +34,103 @@ class Product
     /** @var string */
     protected $subCategory;
 
-    /**
-     * @return string
-     */
-    public function getSku()
+    public function getSku(): string
     {
         return $this->sku;
     }
 
-    /**
-     * @param string $sku
-     */
-    public function setSku($sku)
+    public function setSku(string $sku): void
     {
         $this->sku = $sku;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
-    public function setName($name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->url;
     }
 
-    /**
-     * @param string $url
-     */
-    public function setUrl($url)
+    public function setUrl(string $url): void
     {
         $this->url = $url;
     }
 
-    /**
-     * @return string
-     */
-    public function getImage()
+    public function getImage(): string
     {
         return $this->image;
     }
 
-    /**
-     * @param string $image
-     */
-    public function setImage($image)
+    public function setImage(string $image): void
     {
         $this->image = $image;
     }
 
-    /**
-     * @return string
-     */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->quantity;
     }
 
-    /**
-     * @param string $quantity
-     */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity): void
     {
         $this->quantity = $quantity;
     }
 
-    /**
-     * @return string
-     */
-    public function getPrice()
+    public function getPrice(): int
     {
         return $this->price;
     }
 
-    /**
-     * @param string $price
-     */
-    public function setPrice($price)
+    public function setPrice(int $price): void
     {
         $this->price = $price;
     }
 
-    /**
-     * @return int
-     */
-    public function getWeight()
+    public function getWeight(): int
     {
         return $this->weight;
     }
 
-    /**
-     * @param int $weight Grams
-     */
-    public function setWeight($weight)
+    public function setWeight(int $weight): void
     {
         $this->weight = $weight;
     }
 
-    /**
-     * @return bool
-     */
-    public function isDigital()
+    public function isDigital(): bool
     {
         return $this->isDigital;
     }
 
-    /**
-     * @param bool $isDigital
-     */
-    public function setIsDigital($isDigital)
+    public function setIsDigital(bool $isDigital): void
     {
         $this->isDigital = $isDigital;
     }
 
-    /**
-     * @return string
-     */
-    public function getCategory()
+    public function getCategory(): string
     {
         return $this->category;
     }
 
-    /**
-     * @param string $category
-     */
-    public function setCategory($category)
+
+    public function setCategory(string $category): void
     {
         $this->category = $category;
     }
 
-    /**
-     * @return string
-     */
-    public function getSubCategory()
+    public function getSubCategory(): string
     {
         return $this->subCategory;
     }
 
-    /**
-     * @param string $subCategory
-     */
-    public function setSubCategory($subCategory)
+    public function setSubCategory(string $subCategory): void
     {
         $this->subCategory = $subCategory;
     }

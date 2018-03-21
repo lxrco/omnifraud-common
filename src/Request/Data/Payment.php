@@ -22,66 +22,44 @@ class Payment
     /** @var string Response match code. @see http://www.emsecommerce.net/avs_cvv2_response_codes.htm */
     protected $cvv;
 
-    /**
-     * @return int
-     */
-    public function getBin()
+
+    public function getBin(): int
     {
         return $this->bin;
     }
 
-    /**
-     * @param int $bin
-     */
-    public function setBin($bin)
+    public function setBin(int $bin)
     {
         $this->bin = $bin;
     }
 
-    /**
-     * @return string
-     */
-    public function getLast4()
+    public function getLast4(): string
     {
         return $this->last4;
     }
 
-    /**
-     * @param string $last4
-     */
-    public function setLast4($last4)
+    public function setLast4(string $last4)
     {
         $this->last4 = $last4;
     }
 
-    /**
-     * @return int
-     */
-    public function getExpiryMonth()
+
+    public function getExpiryMonth(): int
     {
         return $this->expiryMonth;
     }
 
-    /**
-     * @param int $expiryMonth
-     */
-    public function setExpiryMonth($expiryMonth)
+    public function setExpiryMonth(int $expiryMonth): void
     {
-        $this->expiryMonth = sprintf('%02d', $expiryMonth);
+        $this->expiryMonth = $expiryMonth;
     }
 
-    /**
-     * @return int
-     */
-    public function getExpiryYear()
+    public function getExpiryYear(): int
     {
         return $this->expiryYear;
     }
 
-    /**
-     * @param int $expiryYear
-     */
-    public function setExpiryYear(int $expiryYear)
+    public function setExpiryYear(int $expiryYear): void
     {
         if ($expiryYear > 99) {
             $expiryYear = (int)substr((string)$expiryYear, 2);
@@ -89,34 +67,22 @@ class Payment
         $this->expiryYear = $expiryYear;
     }
 
-    /**
-     * @return string
-     */
-    public function getAvs()
+    public function getAvs(): string
     {
         return $this->avs;
     }
 
-    /**
-     * @param string $avs
-     */
-    public function setAvs($avs)
+    public function setAvs(string $avs)
     {
         $this->avs = $avs;
     }
 
-    /**
-     * @return string
-     */
-    public function getCvv()
+    public function getCvv(): string
     {
         return $this->cvv;
     }
 
-    /**
-     * @param string $cvv
-     */
-    public function setCvv($cvv)
+    public function setCvv(string $cvv)
     {
         $this->cvv = $cvv;
     }

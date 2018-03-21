@@ -6,7 +6,7 @@ use Omnifraud\Contracts\MessageInterface;
 
 class BaseMessage implements MessageInterface, \JsonSerializable
 {
-    /** @var int */
+    /** @var string */
     protected $type;
 
     /** @var string */
@@ -15,23 +15,14 @@ class BaseMessage implements MessageInterface, \JsonSerializable
     /** @var string */
     protected $code;
 
-    /**
-     * BaseMessage constructor.
-     *
-     * @param int $type
-     * @param $message
-     */
-    public function __construct($type, $code, $message)
+    public function __construct(string $type, string $code, string $message)
     {
         $this->type = $type;
         $this->message = $message;
         $this->code = $code;
     }
 
-    /**
-     * @return int
-     */
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }
@@ -44,39 +35,27 @@ class BaseMessage implements MessageInterface, \JsonSerializable
         $this->type = $type;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }
 
-    /**
-     * @param mixed $message
-     */
-    public function setMessage($message)
+    public function setMessage(string $message): void
     {
         $this->message = $message;
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->code;
     }
 
-    /**
-     * @param string $code
-     */
-    public function setCode($code)
+    public function setCode(string $code): void
     {
         $this->code = $code;
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return ['type' => $this->getType(), 'message' => $this->getMessage()];
     }

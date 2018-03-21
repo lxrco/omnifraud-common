@@ -9,15 +9,16 @@ use Omnifraud\Request\Data\Product;
 use Omnifraud\Request\Data\Purchase;
 use Omnifraud\Request\Data\Session;
 use Omnifraud\Request\Request;
+use Omnifraud\Request\RequestException;
 
 trait MakesTestRequests
 {
-    protected function makeTestRequest()
+    protected function makeTestRequest(): Request
     {
         $request = new Request();
 
         $purchase = new Purchase();
-        $purchase->setId(1);
+        $purchase->setId('1');
         $purchase->setCreatedAt(new \DateTime('2017-09-02 12:12:12'));
         $purchase->setCurrencyCode('CAD');
         $purchase->setTotal(56025); // 560.25

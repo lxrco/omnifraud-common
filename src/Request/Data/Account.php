@@ -25,172 +25,111 @@ class Account
     /** @var string */
     protected $lastOrderId;
 
-    /** @var int Number of orders customers */
+    /** @var int Number of orders the customer made */
     protected $totalOrderCount;
 
-    /** @var int */
+    /** @var int Total amount of orders made by customer */
     protected $totalOrderAmount;
 
-    /** @var int */
+    /** @var int Number of different credit cards that where tested and failed */
     protected $failedCreditsCardsCount;
 
-    /**
-     * @return string
-     */
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     */
-    public function setId($id)
+    public function setId($id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * @return string
-     */
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->username;
     }
 
-    /**
-     * @param string $username
-     */
-    public function setUsername($username)
+    public function setUsername(string $username): void
     {
         $this->username = $username;
     }
 
-    /**
-     * @return string
-     */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
 
-    /**
-     * @param string $email
-     */
-    public function setEmail($email)
+    public function setEmail(string $email)
     {
         $this->email = $email;
     }
 
-    /**
-     * @return string
-     */
-    public function getPhone()
+    public function getPhone(): string
     {
         return $this->phone;
     }
 
-    /**
-     * @param string $phone
-     */
-    public function setPhone($phone)
+    public function setPhone(string $phone)
     {
         $this->phone = $phone;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getCreatedAt()
+    public function getCreatedAt(): \DateTime
     {
         return $this->createdAt;
     }
 
-    /**
-     * @param \DateTime $createdAt
-     */
-    public function setCreatedAt(\DateTime $createdAt)
+    public function setCreatedAt(\DateTime $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
+    public function getUpdatedAt(): \DateTime
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @param \DateTime $updatedAt
-     */
-    public function setUpdatedAt(\DateTime $updatedAt)
+    public function setUpdatedAt(\DateTime $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastOrderId()
+    public function getLastOrderId(): string
     {
         return $this->lastOrderId;
     }
 
-    /**
-     * @param string $lastOrderId
-     */
-    public function setLastOrderId($lastOrderId)
+    public function setLastOrderId(string $lastOrderId): void
     {
         $this->lastOrderId = $lastOrderId;
     }
 
-    /**
-     * @return int
-     */
-    public function getTotalOrderCount()
+    public function getTotalOrderCount(): int
     {
         return $this->totalOrderCount;
     }
 
-    /**
-     * @param int $totalOrderCount
-     */
-    public function setTotalOrderCount($totalOrderCount)
+    public function setTotalOrderCount(int $totalOrderCount): void
     {
         $this->totalOrderCount = $totalOrderCount;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTotalOrderAmount()
+    public function getTotalOrderAmount(): int
     {
         return $this->totalOrderAmount;
     }
 
-    /**
-     * @param mixed $totalOrderAmount
-     */
-    public function setTotalOrderAmount($totalOrderAmount)
+    public function setTotalOrderAmount(int $totalOrderAmount)
     {
         $this->totalOrderAmount = $totalOrderAmount;
     }
 
-    /**
-     * @return int
-     */
-    public function getFailedCreditsCardsCount()
+    public function getFailedCreditsCardsCount(): int
     {
         return $this->failedCreditsCardsCount;
     }
 
-    /**
-     * Number of different credit cards that where tested and failed
-     * @param int $failedCreditsCardsCount
-     */
-    public function setFailedCreditsCardsCount($failedCreditsCardsCount)
+    public function setFailedCreditsCardsCount(int $failedCreditsCardsCount)
     {
         $this->failedCreditsCardsCount = $failedCreditsCardsCount;
     }
