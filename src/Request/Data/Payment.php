@@ -4,22 +4,22 @@ namespace Omnifraud\Request\Data;
 
 class Payment
 {
-    /** @var int First 6 numbers of the credit card */
+    /** @var null|int First 6 numbers of the credit card */
     protected $bin;
 
-    /** @var string Last 6 numbers of the credit card */
+    /** @var null|string Last 6 numbers of the credit card */
     protected $last4;
 
-    /** @var int */
+    /** @var null|int */
     protected $expiryMonth;
 
-    /** @var int */
+    /** @var null|int */
     protected $expiryYear;
 
-    /** @var string Response match code. @see http://www.emsecommerce.net/avs_cvv2_response_codes.htm */
+    /** @var null|string Response match code. @see http://www.emsecommerce.net/avs_cvv2_response_codes.htm */
     protected $avs;
 
-    /** @var string Response match code. @see http://www.emsecommerce.net/avs_cvv2_response_codes.htm */
+    /** @var null|string Response match code. @see http://www.emsecommerce.net/avs_cvv2_response_codes.htm */
     protected $cvv;
 
 
@@ -28,12 +28,12 @@ class Payment
         return $this->bin;
     }
 
-    public function setBin(int $bin)
+    public function setBin(?int $bin)
     {
         $this->bin = $bin;
     }
 
-    public function getLast4(): string
+    public function getLast4(): ?string
     {
         return $this->last4;
     }
@@ -44,22 +44,22 @@ class Payment
     }
 
 
-    public function getExpiryMonth(): int
+    public function getExpiryMonth(): ?int
     {
         return $this->expiryMonth;
     }
 
-    public function setExpiryMonth(int $expiryMonth): void
+    public function setExpiryMonth(?int $expiryMonth): void
     {
         $this->expiryMonth = $expiryMonth;
     }
 
-    public function getExpiryYear(): int
+    public function getExpiryYear(): ?int
     {
         return $this->expiryYear;
     }
 
-    public function setExpiryYear(int $expiryYear): void
+    public function setExpiryYear(?int $expiryYear): void
     {
         if ($expiryYear > 99) {
             $expiryYear = (int)substr((string)$expiryYear, 2);
@@ -67,22 +67,22 @@ class Payment
         $this->expiryYear = $expiryYear;
     }
 
-    public function getAvs(): string
+    public function getAvs(): ?string
     {
         return $this->avs;
     }
 
-    public function setAvs(string $avs)
+    public function setAvs(?string $avs)
     {
         $this->avs = $avs;
     }
 
-    public function getCvv(): string
+    public function getCvv(): ?string
     {
         return $this->cvv;
     }
 
-    public function setCvv(string $cvv)
+    public function setCvv(?string $cvv)
     {
         $this->cvv = $cvv;
     }

@@ -4,28 +4,28 @@ namespace Omnifraud\Request\Data;
 
 class Address
 {
-    /** @var string */
+    /** @var null|string */
     protected $fullName;
 
-    /** @var string */
+    /** @var null|string */
     protected $streetAddress;
 
-    /** @var string */
+    /** @var null|string */
     protected $unit;
 
-    /** @var string */
+    /** @var null|string */
     protected $city;
 
-    /** @var string */
+    /** @var null|string */
     protected $state;
 
-    /** @var string */
+    /** @var null|string */
     protected $postalCode;
 
-    /** @var string */
+    /** @var null|string */
     protected $countryCode;
 
-    /** @var string */
+    /** @var null|string */
     protected $phone;
 
     public function getPhone(): string
@@ -33,7 +33,7 @@ class Address
         return $this->phone;
     }
 
-    public function setPhone(string $phone): void
+    public function setPhone(?string $phone): void
     {
         $this->phone = $phone;
     }
@@ -41,72 +41,72 @@ class Address
     /**
      * @return string
      */
-    public function getFullName(): string
+    public function getFullName(): ?string
     {
         return $this->fullName;
     }
 
-    public function setFullName(string $fullName): void
+    public function setFullName(?string $fullName): void
     {
         $this->fullName = $fullName;
     }
 
-    public function getStreetAddress(): string
+    public function getStreetAddress(): ?string
     {
         return $this->streetAddress;
     }
 
-    public function setStreetAddress(string $streetAddress): void
+    public function setStreetAddress(?string $streetAddress): void
     {
         $this->streetAddress = $streetAddress;
     }
 
-    public function getUnit(): string
+    public function getUnit(): ?string
     {
         return $this->unit;
     }
 
-    public function setUnit(string $unit): void
+    public function setUnit(?string $unit): void
     {
         $this->unit = $unit;
     }
 
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->city;
     }
 
-    public function setCity(string $city): void
+    public function setCity(?string $city): void
     {
         $this->city = $city;
     }
 
-    public function getState(): string
+    public function getState(): ?string
     {
         return $this->state;
     }
 
-    public function setState(string $state): void
+    public function setState(?string $state): void
     {
         $this->state = $state;
     }
 
-    public function getPostalCode(): string
+    public function getPostalCode(): ?string
     {
         return $this->postalCode;
     }
 
-    public function setPostalCode(string $postalCode): void
+    public function setPostalCode(?string $postalCode): void
     {
         $this->postalCode = $postalCode;
     }
 
-    public function getCountryCode(): string
+    public function getCountryCode(): ?string
     {
         return $this->countryCode;
     }
 
-    public function setCountryCode(string $countryCode): void
+    public function setCountryCode(?string $countryCode): void
     {
         $this->countryCode = $countryCode;
     }

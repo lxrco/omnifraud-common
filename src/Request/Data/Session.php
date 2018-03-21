@@ -4,28 +4,28 @@ namespace Omnifraud\Request\Data;
 
 class Session
 {
-    /** @var string */
+    /** @var null|string */
     protected $id;
 
-    /** @var string */
+    /** @var null|string */
     protected $ip;
 
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    public function setId(string $id): void
+    public function setId(?string $id): void
     {
         $this->id = $id;
     }
 
-    public function getIp(): string
+    public function getIp(): ?string
     {
         return $this->ip;
     }
 
-    public function setIp(string $ip): void
+    public function setIp(?string $ip): void
     {
         $this->ip = $ip;
     }
