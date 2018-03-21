@@ -1,6 +1,6 @@
 {
     "name": "omnifraud/common",
-    "description": "A framework agnostic, multi-gateway fraud prevention library for PHP 7.1+",
+    "description": "Core components for the Omnifraud PHP fraud prevention library",
     "type": "library",
     "license": "MIT",
     "authors": [
