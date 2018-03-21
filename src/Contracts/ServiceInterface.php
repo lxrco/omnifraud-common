@@ -44,7 +44,7 @@ interface ServiceInterface
      *
      * @return string|null
      */
-    public function getRequestExternalLink($requestUid): ?string;
+    public function getRequestExternalLink(string $requestUid): ?string;
 
     // Those methods can be left empty if the service does not support them
 
