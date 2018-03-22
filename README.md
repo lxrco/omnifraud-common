@@ -2,13 +2,6 @@
 
 **And easy to use, constistent fraud prevention processing library for PHP 7.1+**
 
-Inpired by [Omnipay](https://github.com/thephpleague/omnipay), Omnifraud is an fraud prevention livrary for PHP. It aims at providing a clear and consisten API for interacting with different fraud prevention service.
-
-
-## TL;DR
-
-Here is a basic example
-
-```php
-// TODO
-```
+Inspired by [Omnipay](https://github.com/thephpleague/omnipay),
+[Omnifraud](https://github.com/lxrco/omnifraud) is an fraud prevention library for PHP.
+It aims at providing a clear and consistent API for interacting with different fraud prevention service.
