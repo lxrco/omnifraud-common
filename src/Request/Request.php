@@ -28,7 +28,7 @@ class Request
     /** @var \Omnifraud\Request\Data\Address */
     protected $billingAddress;
 
-    /** @var string */
+    /** @var null|string */
     protected $uid;
 
     public function __construct()
@@ -101,12 +101,12 @@ class Request
         $this->billingAddress = $billingAddress;
     }
 
-    public function getUid(): string
+    public function getUid(): ?string
     {
         return $this->uid;
     }
 
-    public function setUid(string $uid): void
+    public function setUid(?string $uid): void
     {
         $this->uid = $uid;
     }
