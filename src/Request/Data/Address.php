@@ -28,7 +28,7 @@ class Address
     /** @var null|string */
     protected $phone;
 
-    public function getPhone(): string
+    public function getPhone(): ?string
     {
         return $this->phone;
     }

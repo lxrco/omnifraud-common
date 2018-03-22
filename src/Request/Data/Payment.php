@@ -23,7 +23,7 @@ class Payment
     protected $cvv;
 
 
-    public function getBin(): int
+    public function getBin(): ?int
     {
         return $this->bin;
     }

@@ -34,7 +34,7 @@ class Account
     /** @var null|int Number of different credit cards that where tested and failed */
     protected $failedCreditsCardsCount;
 
-    public function getId()
+    public function getId(): ?string
     {
         return $this->id;
     }
