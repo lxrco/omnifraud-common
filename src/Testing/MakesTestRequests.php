@@ -9,7 +9,6 @@ use Omnifraud\Request\Data\Product;
 use Omnifraud\Request\Data\Purchase;
 use Omnifraud\Request\Data\Session;
 use Omnifraud\Request\Request;
-use Omnifraud\Request\RequestException;
 
 trait MakesTestRequests
 {

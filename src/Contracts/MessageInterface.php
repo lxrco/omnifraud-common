@@ -10,18 +10,21 @@ interface MessageInterface
 
     /**
      * Error type, must be one of self::TYPE_*
+     *
      * @return string
      */
     public function getType(): string;
 
     /**
      * Message text
+     *
      * @return string
      */
     public function getMessage(): string;
 
     /**
      * Message Code name
+     *
      * @return string
      */
     public function getCode(): string;

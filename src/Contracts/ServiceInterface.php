@@ -11,7 +11,8 @@ interface ServiceInterface
     const PAGE_CHECKOUT = 'checkout';
 
     /**
-     * Code that must be added to the frontend to track user before actual purchase
+     * Code that must be added to the frontend to track user before actual purchase, some service can return null if
+     * they do not require frontend tracking
      *
      * @param string $pageType One of self::PAGE_* which page is the customer on
      *
@@ -20,7 +21,8 @@ interface ServiceInterface
     public function trackingCode(string $pageType): ?string;
 
     /**
-     * Run request validation
+     * Validate a request, this is the main entry point. If the returned response is async, @see updateRequest
+     *
      * @param Request $request
      *
      * @return \Omnifraud\Contracts\ResponseInterface
@@ -29,7 +31,8 @@ interface ServiceInterface
     public function validateRequest(Request $request): ResponseInterface;
 
     /**
-     * Update a response that was marked as async
+     * Update a previous async request, might still return an async response if the service needs more time to process
+     *
      * @param Request $request Most services only require the UID
      *
      * @return \Omnifraud\Contracts\ResponseInterface
@@ -38,8 +41,8 @@ interface ServiceInterface
     public function updateRequest(Request $request): ResponseInterface;
 
     /**
-     * If the service provides a web interface, this should return the URL at which
-     * the request can be viewed
+     * If the service provides a web interface, this should return the URL at which the request can be viewed
+     *
      * @param string $requestUid
      *
      * @return string|null
@@ -49,7 +52,7 @@ interface ServiceInterface
     // Those methods can be left empty if the service does not support them
 
     /**
-     * Log a transaction that was refused by payment processor
+     * Send a refused transaction to the fraud prevention service if it was refused by the payment processor
      *
      * Can be left empty if not supported
      *
@@ -61,7 +64,8 @@ interface ServiceInterface
     public function logRefusedRequest(Request $request): void;
 
     /**
-     * Cancel a request for which the transaction was refused/refunded anyway
+     * Cancel a fraud review if it was refunded and/or manually refused.
+     * Some service will refund the review fee for those.
      *
      * Can be left empty if not supported
      *
