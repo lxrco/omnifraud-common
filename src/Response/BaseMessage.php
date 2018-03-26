@@ -27,32 +27,14 @@ class BaseMessage implements MessageInterface, \JsonSerializable
         return $this->type;
     }
 
-    /**
-     * @param int $type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
-
     public function getMessage(): string
     {
         return $this->message;
     }
 
-    public function setMessage(string $message): void
-    {
-        $this->message = $message;
-    }
-
     public function getCode(): string
     {
         return $this->code;
-    }
-
-    public function setCode(string $code): void
-    {
-        $this->code = $code;
     }
 
     public function jsonSerialize(): array
