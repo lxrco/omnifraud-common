@@ -23,10 +23,4 @@ class BaseMessageTest extends TestCase
 
         $this->assertSame('{"type":"error","message":"This is a test message"}', json_encode($message));
     }
-    
-    public function testSetters()
-    {
-        $message = new BaseMessage(MessageInterface::TYPE_ERROR, 'TE', 'This is a test message');
-
-    }
 }

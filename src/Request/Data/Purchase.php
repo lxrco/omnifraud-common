@@ -29,7 +29,6 @@ class Purchase
         $this->id = $id;
     }
 
-
     public function getCreatedAt(): ?\DateTime
     {
         return $this->createdAt;
