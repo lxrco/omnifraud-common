@@ -9,11 +9,18 @@ interface MessageInterface
     const TYPE_ERROR = 'error';
 
     /**
-     * Error type, must be one of self::TYPE_*
+     * Error type (info/warning/error). Must be one of self::TYPE_*
      *
      * @return string
      */
     public function getType(): string;
+
+    /**
+     * Short, 3-letter code associated to this message
+     *
+     * @return string
+     */
+    public function getCode(): string;
 
     /**
      * Message text
@@ -21,11 +28,4 @@ interface MessageInterface
      * @return string
      */
     public function getMessage(): string;
-
-    /**
-     * Message Code name
-     *
-     * @return string
-     */
-    public function getCode(): string;
 }

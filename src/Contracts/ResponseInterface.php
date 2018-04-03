@@ -5,44 +5,47 @@ namespace Omnifraud\Contracts;
 interface ResponseInterface
 {
     /**
-     * Get all messages
-     *
-     * messages can be
+     * Get all associated fraud messages
      *
      * @return \Omnifraud\Contracts\MessageInterface[]
      */
     public function getMessages(): array;
 
     /**
-     * How trustworthy is that transaction, 100 is best, 0 is worst
+     * The score assigned by the service, where 100 is the best and 0 is the
+     * worst. In the event that the response is pending, this is nullable.
      *
      * @return float|null
      */
-    public function getPercentScore(): ?float;
+    public function getScore(): ?float;
 
     /**
-     * Is this transaction guaranteed, this means the service will cover the purchase with some king of insurance
+     * Whether or not the transaction is guaranteed if your service provider
+     * supports liability shifting.
      *
      * @return bool
      */
     public function isGuaranteed(): bool;
 
     /**
-     * Does this response needs to be updated at a later time?
+     * Determines if this response is still pending. Pending responses can be
+     * neither scored nor guaranteed. This is an indicator that you need to
+     * queue this response for updating.
      *
      * @return bool
      */
-    public function isAsync(): bool;
+    public function isPending(): bool;
 
     /**
-     * Get raw response from the service
+     * Get raw response from the service.
      *
      * @return string
      */
     public function getRawResponse(): string;
 
     /**
-     * Get UID of the request, used for future requests to the service
+     * Get remote UID of the request used for future requests to the service.
+     * Useful for refreshing pending responses, cancelling, etc.
      *
      * @return string
      */
