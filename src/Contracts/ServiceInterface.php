@@ -11,40 +11,40 @@ interface ServiceInterface
     const PAGE_CHECKOUT = 'checkout';
 
     /**
-     * Code that must be added to the frontend to track user before actual purchase, some service can return null if
-     * they do not require frontend tracking
+     * Code that must be added to the frontend to track user activity before and
+     * during the purchase. Some services do not require this and will return an
+     * empty string.
      *
      * @param string $pageType One of self::PAGE_* which page is the customer on
-     *
-     * @return string|null
+     * @return string
      */
-    public function trackingCode(string $pageType): ?string;
+    public function trackingCode(string $pageType): string;
 
     /**
-     * Validate a request, this is the main entry point. If the returned response is async, @see updateRequest
+     * Validate a request. This is the main entry point. If the returned
+     * response is pending, @see updateRequest
      *
      * @param Request $request
-     *
      * @return \Omnifraud\Contracts\ResponseInterface
      * @throws \Omnifraud\Request\RequestException
      */
     public function validateRequest(Request $request): ResponseInterface;
 
     /**
-     * Update a previous async request, might still return an async response if the service needs more time to process
+     * Update a previous request. Useful for updating pending responses, or
+     * responses that were manually modified through the services web interface.
      *
      * @param Request $request Most services only require the UID
-     *
      * @return \Omnifraud\Contracts\ResponseInterface
      * @throws \Omnifraud\Request\RequestException
      */
     public function updateRequest(Request $request): ResponseInterface;
 
     /**
-     * If the service provides a web interface, this should return the URL at which the request can be viewed
+     * Generates a link to the services web view of a request/response. If the
+     * service does not provide dedicated web views, null is returned.
      *
      * @param string $requestUid
-     *
      * @return string|null
      */
     public function getRequestExternalLink(string $requestUid): ?string;
@@ -52,25 +52,21 @@ interface ServiceInterface
     // Those methods can be left empty if the service does not support them
 
     /**
-     * Send a refused transaction to the fraud prevention service if it was refused by the payment processor
-     *
-     * Can be left empty if not supported
+     * Send a refused transaction to the fraud prevention service if it was
+     * refused by the payment processor.
      *
      * @param Request $request
-     *
      * @return void
      * @throws \Omnifraud\Request\RequestException
      */
     public function logRefusedRequest(Request $request): void;
 
     /**
-     * Cancel a fraud review if it was refunded and/or manually refused.
-     * Some service will refund the review fee for those.
+     * Cancel a fraud review if it was refunded and/or manually refused. Some
+     * service will refund the review fee for those.
      *
-     * Can be left empty if not supported
-     *
-     * @param string $requestUid
+     * @param Request $request Most services only require the UID
      * @throws \Omnifraud\Request\RequestException
      */
-    public function cancelRequest(string $requestUid): void;
+    public function cancelRequest(Request $request): void;
 }
