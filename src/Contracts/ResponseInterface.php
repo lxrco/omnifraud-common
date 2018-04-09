@@ -5,13 +5,6 @@ namespace Omnifraud\Contracts;
 interface ResponseInterface
 {
     /**
-     * Get all associated fraud messages
-     *
-     * @return \Omnifraud\Contracts\MessageInterface[]
-     */
-    public function getMessages(): array;
-
-    /**
      * The score assigned by the service, where 100 is the best and 0 is the
      * worst. In the event that the response is pending, this is nullable.
      *

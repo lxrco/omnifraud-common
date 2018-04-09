@@ -16,9 +16,13 @@ interface ServiceInterface
      * empty string.
      *
      * @param string $pageType One of self::PAGE_* which page is the customer on
+     * @param string $sessionId The session ID of the user to generate tracking
+     * code for
+     * @param bool $quote If true, will quote and escape the provided session
+     * ID. Pass false if your session ID is a JavaScript variable.
      * @return string
      */
-    public function trackingCode(string $pageType): string;
+    public function trackingCode(string $pageType, string $sessionId, bool $quote = true): string;
 
     /**
      * Validate a request. This is the main entry point. If the returned
