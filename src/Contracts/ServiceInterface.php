@@ -56,14 +56,14 @@ interface ServiceInterface
     // Those methods can be left empty if the service does not support them
 
     /**
-     * Send a refused transaction to the fraud prevention service if it was
-     * refused by the payment processor.
+     * Notify the fraud prevention service if a payment was refused by the
+     * payment processor.
      *
      * @param Request $request
      * @return void
      * @throws \Omnifraud\Request\RequestException
      */
-    public function logRefusedRequest(Request $request): void;
+    public function logRefusedPayment(Request $request): void;
 
     /**
      * Cancel a fraud review if it was refunded and/or manually refused. Some
