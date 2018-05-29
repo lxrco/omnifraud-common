@@ -28,7 +28,7 @@ interface ServiceInterface
      * Validate a request. This is the main entry point. If the returned
      * response is pending, @see updateRequest
      *
-     * @param Request $request
+     * @param \Omnifraud\Request\Request $request
      * @return \Omnifraud\Contracts\ResponseInterface
      * @throws \Omnifraud\Request\RequestException
      */
@@ -38,7 +38,7 @@ interface ServiceInterface
      * Update a previous request. Useful for updating pending responses, or
      * responses that were manually modified through the services web interface.
      *
-     * @param Request $request Most services only require the UID
+     * @param \Omnifraud\Request\Request $request Most services only require the UID
      * @return \Omnifraud\Contracts\ResponseInterface
      * @throws \Omnifraud\Request\RequestException
      */
@@ -59,7 +59,7 @@ interface ServiceInterface
      * Send a refused transaction to the fraud prevention service if it was
      * refused by the payment processor.
      *
-     * @param Request $request
+     * @param \Omnifraud\Request\Request $request
      * @return void
      * @throws \Omnifraud\Request\RequestException
      */
