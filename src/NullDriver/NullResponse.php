@@ -6,8 +6,10 @@ use Omnifraud\Contracts\ResponseInterface;
 
 class NullResponse implements ResponseInterface
 {
+    /** @var float */
     protected $score;
 
+    /** @var int */
     protected $requestUid;
 
     protected static $uid = 'UID0001';
@@ -42,5 +44,4 @@ class NullResponse implements ResponseInterface
     {
         return $this->requestUid;
     }
-
 }
